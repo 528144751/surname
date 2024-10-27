@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.surname.mapper.UserLogsMapper" >
+    <resultMap id ="UserMap" type="com.surname.dto.UserLogs">
+        <result column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="controls" property="controls"/>
+        <result column="remark" property="remark"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <insert id="insertUserLogs">
+        insert into userlogs (user_name, controls, remark, create_time) values
+            (#{userName}, #{controls}, #{remark}, #{createTime})
+    </insert>
+
+</mapper>

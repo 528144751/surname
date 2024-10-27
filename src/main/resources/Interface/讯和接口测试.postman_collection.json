@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "2679fccf-7494-4df1-8114-527b5edcc9b2",
+		"name": "讯和接口测试",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "登录接口",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\"userName\":\"admin\",\n\"userPassword\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/surname/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"surname",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "注册接口",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\"userName\":\"admin\",\n\"userPassword\":\"123456\",\n\"phoneNumber\":\"18730378698\",\n\"userEmail\":\"528144751@qq.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/surname/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"surname",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试拦截器和全局异常接口",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJZR1EiLCJleHAiOjE3MzAwMDE3MDMsInVzZXJuYW1lIjoiYWRtaW4ifQ.VEf7KVQTJ2_uT5SIRJSbagrbA0LqhKoPaiAnj7dJvG4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/surname/test",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"surname",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "退出登录接口",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJZR1EiLCJleHAiOjE3MzAwMDE3MDMsInVzZXJuYW1lIjoiYWRtaW4ifQ.VEf7KVQTJ2_uT5SIRJSbagrbA0LqhKoPaiAnj7dJvG4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\"userName\":\"admin\",\n\"userPassword\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/surname/outLogin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"surname",
+						"outLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户规则接口",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJZR1EiLCJleHAiOjE3MzAwMDE3MDMsInVzZXJuYW1lIjoiYWRtaW4ifQ.VEf7KVQTJ2_uT5SIRJSbagrbA0LqhKoPaiAnj7dJvG4",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/surname/swagger/action?action=action1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"surname",
+						"swagger",
+						"action"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "action1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

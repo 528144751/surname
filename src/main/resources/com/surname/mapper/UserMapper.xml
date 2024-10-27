@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.surname.mapper.UserMapper" >
+    <resultMap id ="UserMap" type="com.surname.dto.User">
+        <result column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_password" property="userPassword"/>
+        <result column="phone_number" property="phoneNumber"/>
+        <result column="user_email" property="userEmail"/>
+        <result column="login_num" property="loginNum"/>
+    </resultMap>
+
+    <select id="findUserName" resultType="com.surname.dto.User">
+        SELECT id, user_name, user_password, phone_number, user_email, login_num   FROM user WHERE user_name = #{userName}
+    </select>
+
+    <insert id="register">
+        insert into user (user_name, user_password, phone_number, user_email) values
+           (#{userName}, #{userPassword}, #{phoneNumber}, #{userEmail})
+    </insert>
+
+    <update id="updateUser" parameterType="com.surname.dto.User">
+        UPDATE user
+        SET
+            login_num = #{loginNum}
+        WHERE id = #{id}
+    </update>
+
+</mapper>
